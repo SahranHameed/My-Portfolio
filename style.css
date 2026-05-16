@@ -1,0 +1,25 @@
+/* ── HOME IMAGE ── */
+.home-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-box {
+  position: relative;
+}
+
+.profile-img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--accent);
+  box-shadow: 0 0 30px rgba(18,247,255,0.5);
+  transition: 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 45px rgba(18,247,255,0.8);
+}
