@@ -686,7 +686,16 @@ footer p { color: var(--muted); font-size: 0.9rem; }
   .btn-box { justify-content: center; }
   .social-icons { justify-content: center; }
   .change-text { justify-content: center; }
-  .home-image { display: none; }
+  .home-image { display: flex;
+              justify-content: center;
+              margin-top: 2rem;
+              }
+  .home-image img {
+    max-width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
   .about { grid-template-columns: 1fr; }
   .about-img { display: none; }
   .contact-wrapper { grid-template-columns: 1fr; }
