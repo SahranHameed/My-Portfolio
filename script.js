@@ -134,3 +134,26 @@ revealElements.forEach(el => {
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
+
+
+// ─── CERTIFICATIONS FILTER ───────────────────────────────────────────────────
+const certTabs = document.querySelectorAll(".cert-tab");
+const certCards = document.querySelectorAll(".cert-card");
+
+certTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    certTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    const filter = tab.getAttribute("data-filter");
+
+    certCards.forEach(card => {
+      if (filter === "all" || card.getAttribute("data-category") === filter) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+  });
+});
+
