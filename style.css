@@ -740,9 +740,10 @@ footer p { color: var(--muted); font-size: 0.9rem; }
 }
 
 .rotating-words .word {
-  white-space: normal;
+  white-space: nowrap;
   text-align: center;
   width: 100%;
+  font-size: 0.95rem;
 }
 } 
 
