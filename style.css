@@ -175,7 +175,8 @@ section { padding: 100px 8%; }
 .rotating-words {
   position: relative;
   display: inline-block;
-  min-width: 420px;
+  width: 100%;
+  max-width: 420px;
   height: 2rem;       /* FIX: was 1.6rem — caused dots to overflow */
   overflow: hidden;
   margin-left: 8px;
@@ -732,6 +733,17 @@ footer p { color: var(--muted); font-size: 0.9rem; }
 
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .about-stats { flex-wrap: wrap; gap: 1rem; }
+
+  .rotating-words {
+  width: 100%;
+  max-width: 100%;
+}
+
+.rotating-words .word {
+  white-space: normal;
+  text-align: center;
+  width: 100%;
+}
 } 
 
 .mini-stats {
