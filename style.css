@@ -175,7 +175,7 @@ section { padding: 100px 8%; }
 .rotating-words {
   position: relative;
   display: inline-block;
-  min-width: 260px;
+  min-width: 420px;
   height: 1.6rem;
   overflow: hidden;
   margin-left: 8px;
