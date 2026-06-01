@@ -1236,3 +1236,32 @@ textarea,
 button {
   font-family: 'Inter', sans-serif;
 }
+
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 8%;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.footer-icons a {
+  color: var(--muted);
+  font-size: 1.4rem;
+  transition: var(--transition);
+}
+
+.footer-icons a:hover {
+  color: var(--accent);
+}
