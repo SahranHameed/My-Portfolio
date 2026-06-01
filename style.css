@@ -67,17 +67,17 @@ header.scrolled {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  border: 2px solid var(--accent);
+  border: 2px solid #12f7ff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 1rem;
-  color: var(--accent);
+  color: #12f7ff;
   background: rgba(18,247,255,0.08);
   letter-spacing: 1px;
-  transition: var(--transition);
+  transition: 0.35s ease;
 }
 
 .sh-icon:hover {
