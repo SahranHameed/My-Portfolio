@@ -584,6 +584,7 @@ section {
   grid-template-columns: repeat(auto-fill, minmax(140px, 140px));
   gap: 1rem;
   justify-content: center;
+  justify-items: center;
 }
 
 .skill-card {
@@ -834,11 +835,12 @@ footer p {
 }
 
 /* ─── MOBILE RESPONSIVE ─── */
-@media (max-width: 1024px) {
-  .home {
-    grid-template-columns: 1fr;
-    text-align: center;
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
   }
+}
 
   .home-content>p,
   .btn-box,
