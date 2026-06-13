@@ -697,6 +697,14 @@ section {
   gap: 0.7rem;
 }
 
+.project-meta {
+  font-size: 0.78rem;
+  color: #888;
+  margin: 6px 0 12px;
+  font-style: italic;
+}
+
+
 /* ─── CONTACT ─── */
 .contact {
   background: var(--bg2);
