@@ -157,3 +157,134 @@ certTabs.forEach(tab => {
   });
 });
 
+
+(function () {
+  var track    = document.getElementById('pjTrack');
+  var dotsWrap = document.getElementById('pjDots');
+  var progBar  = document.getElementById('pjProgressBar');
+  if (!track) return;
+
+  var cards   = Array.from(track.querySelectorAll('.project-card'));
+  var VISIBLE = 4;
+  var AUTO_MS = 5000;
+  var total   = cards.length;
+  var pages   = Math.ceil(total / VISIBLE);
+  var page    = 0;
+  var timer   = null;
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    for (var i = 0; i < pages; i++) {
+      (function(idx) {
+        var b = document.createElement('button');
+        b.className = 'pj-dot' + (idx === 0 ? ' active' : '');
+        b.addEventListener('click', function() { goTo(idx); resetAuto(); });
+        dotsWrap.appendChild(b);
+      })(i);
+    }
+  }
+
+  function updateDots() {
+    var dots = dotsWrap.querySelectorAll('.pj-dot');
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === page); });
+  }
+
+  function goTo(p) {
+    page = ((p % pages) + pages) % pages;
+    var outer   = track.parentElement;
+    var totalGap = 20 * (VISIBLE - 1);
+    var cardW   = (outer.offsetWidth - totalGap) / VISIBLE;
+    var offset  = page * VISIBLE * (cardW + 20);
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    updateDots();
+    runProgress();
+  }
+
+  function runProgress() {
+    progBar.style.transition = 'none';
+    progBar.style.width = '0%';
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        progBar.style.transition = 'width ' + AUTO_MS + 'ms linear';
+        progBar.style.width = '100%';
+      });
+    });
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(function() { goTo(page + 1); }, AUTO_MS);
+  }
+
+  function resetAuto() { startAuto(); }
+
+  document.getElementById('pjPrev').addEventListener('click', function() { goTo(page - 1); resetAuto(); });
+  document.getElementById('pjNext').addEventListener('click', function() { goTo(page + 1); resetAuto(); });
+  window.addEventListener('resize', function() { goTo(page); });
+
+  buildDots();
+  goTo(0);
+  startAuto();
+
+  /* Modal */
+  var modal     = document.getElementById('projectModal');
+  var modalClose= document.getElementById('modalClose');
+
+function openModal(card) {
+  var d = card.dataset;
+
+  document.getElementById('modalTitle').textContent = d.title;
+  document.getElementById('modalType').innerHTML =
+    '<i class="bx bx-grid-alt"></i> ' + d.type;
+  document.getElementById('modalDesc').textContent = d.desc;
+
+  var imgWrap = document.getElementById('modalImg');
+  var iconEl  = document.getElementById('modalIcon');
+
+  var oldImg = imgWrap.querySelector('img.mprev');
+  if (oldImg) oldImg.remove();
+
+  if (d.img && d.img.trim() !== '') {
+    var imgEl = document.createElement('img');
+    imgEl.className = 'mprev';
+    imgEl.alt = d.title;
+
+    imgEl.onerror = function() {
+      imgEl.remove();
+      iconEl.className = d.icon + ' modal-icon';
+      iconEl.style.display = '';
+    };
+
+    imgEl.src = d.img;
+    imgWrap.prepend(imgEl);
+    iconEl.style.display = 'none';
+  } else {
+    iconEl.className = d.icon + ' modal-icon';
+    iconEl.style.display = '';
+  }
+
+  document.getElementById('modalTags').innerHTML =
+    d.tags.split(',').map(function(t) {
+      return '<span>' + t.trim() + '</span>';
+    }).join('');
+
+  var actions = '';
+  if (d.demo)
+    actions += '<a href="' + d.demo + '" target="_blank" class="btn-primary">'
+             + '<i class="bx bx-link-external"></i> Live Preview</a>';
+  if (d.github)
+    actions += '<a href="' + d.github + '" target="_blank" class="btn-ghost">'
+             + '<i class="bx bxl-github"></i> GitHub</a>';
+  document.getElementById('modalActions').innerHTML = actions;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+  function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
+
+  cards.forEach(function(c) { c.addEventListener('click', function() { openModal(c); }); });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+})();
