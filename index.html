@@ -266,146 +266,465 @@
 
   <!-- ───── CERTIFICATIONS ───── -->
   <section id="certifications" class="certifications">
+  <div class="main-text">
+    <span>My Achievements</span>
+    <h2>Certifications</h2>
+  </div>
 
-    <div class="main-text">
-      <span>My Achievements</span>
-      <h2>Certifications</h2>
+  <!-- Filter Tabs -->
+  <div class="cert-filter">
+    <button class="cert-tab active" data-filter="all">All</button>
+    <button class="cert-tab" data-filter="cybersecurity">CyberSecurity</button>
+    <button class="cert-tab" data-filter="webdev">Web Dev</button>
+    <button class="cert-tab" data-filter="ai">AI & ML</button>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="cert-progress">
+    <div class="cert-progress-bar" id="certProgressBar"></div>
+  </div>
+
+  <!-- Carousel Wrapper -->
+  <div class="cert-carousel-outer">
+    <div class="cert-carousel-track" id="certTrack">
+
+      <!-- CARD 1: Introduction to Cybersecurity -->
+      <div class="cert-card" data-category="cybersecurity"
+        data-title="Introduction to Cybersecurity"
+        data-issuer="Cisco"
+        data-year="2023"
+        data-category-label="CyberSecurity"
+        data-icon="bx bx-lock-alt"
+        data-pdf="certificates/introduction-to-cybersecurity.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/intro-cybersecurity.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-lock-alt"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type cyber-tag">CYBERSECURITY</div>
+          <h3>Introduction to Cybersecurity</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Cisco</p>
+          <span class="cert-card-year">2023</span>
+        </div>
+      </div>
+
+
+      <!-- CARD 2: CEH v11 ★ TOP -->
+      <div class="cert-card" data-category="cybersecurity"
+        data-title="Certified Ethical Hacker"
+        data-subtitle="CEH v11"
+        data-issuer="MARS TECH International"
+        data-year="2023"
+        data-category-label="CyberSecurity"
+        data-icon="bx bx-shield-alt-2"
+        data-pdf="certificates/ceh-v11.pdf"
+        data-featured="true">
+        <div class="cert-top-badge">⭐ Top Cert</div>
+        <div class="cert-card-thumb">
+         <img src="assets/certificates/ceh-v11.png" alt="" onerror="this.remove()">
+         <div class="cert-icon-circle"><i class="bx bx-lock-alt"></i></div>
+         <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type cyber-tag">CYBERSECURITY</div>
+          <h3>Certified Ethical Hacker</h3>
+          <p class="cert-card-subtitle">CEH v11</p>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> MARS TECH International</p>
+          <span class="cert-card-year">2023</span>
+        </div>
+      </div>
+
+
+     <!-- CARD 3: Computer-Hardware-Basics -->
+      <div class="cert-card" data-category="CyberSecurity"
+        data-title="Computer Hardware Basics"
+        data-issuer="Cisco"
+        data-year="2023"
+        data-category-label="CyberSecurity"
+        data-icon="bx bx-desktop"
+        data-pdf="certificates/computer-hardware-basics.pdf"
+        data-featured="true">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/computer-hardware-basics.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-desktop"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type cyber-tag">CYBERSECURITY</div>
+          <h3>Computer Hardware Basics</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Cisco</p>
+          <span class="cert-card-year">2023</span>
+        </div>
+      </div>
+
+
+      <!-- CARD 4: Cyber Threat Management -->
+      <div class="cert-card" data-category="cybersecurity"
+        data-title="Cyber Threat Management"
+        data-issuer="Cisco"
+        data-year="2023"
+        data-category-label="CyberSecurity"
+        data-icon="bx bx-bug"
+        data-pdf="certificates/cyber-threat-management.pdf"
+        data-featured="true">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/cyber-threat.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-lock-alt"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type cyber-tag">CYBERSECURITY</div>
+          <h3>Cyber Threat Management</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Cisco</p>
+          <span class="cert-card-year">2023</span>
+        </div>
+      </div>
+
+
+      <!-- CARD 5: AI and Robotics ★ TOP -->
+      <div class="cert-card" data-category="ai"
+        data-title="Artificial Intelligence and Robotics"
+        data-issuer="MARS TECH International"
+        data-year="2024"
+        data-category-label="AI & ML"
+        data-icon="bx bx-chip"
+        data-pdf="certificates/ai-robotics.pdf"
+        data-transcript="certificates/ai-robotics-transcript.pdf"
+        data-featured="true">
+        <div class="cert-top-badge">⭐ Top Cert</div>
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/ai-robotics.png" alt="" onerror="this.remove()">
+          <img src="assets/certificates/ai-robotics-transcript.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle featured-circle"><i class="bx bx-chip"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type ai-tag">AI & ML</div>
+          <h3>Artificial Intelligence and Robotics</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> MARS TECH International</p>
+          <span class="cert-card-year">2024</span>
+        </div>
+      </div>
+
+
+      
+      <!-- CARD 6: Introduction to Artificial Intelligence -->
+      <div class="cert-card" data-category="ai"
+        data-title="Introduction to Artificial Intelligence"
+        data-issuer="Simplilearn"
+        data-year="2025"
+        data-category-label="AI & ML"
+        data-icon="bx bx-brain"
+        data-pdf="certificates/intro-to-artificial-intelligence.pdf"
+        data-transcript=""
+        data-featured="true">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/intro-to-artificial-intelligence.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-brain"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type ai-tag">AI & ML</div>
+          <h3>Introduction to Artificial Intelligence</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Simplilearn</p>
+          <span class="cert-card-year">2025</span>
+        </div>
+      </div>
+
+
+      <!-- CARD 7: Full-Stack Development 101 -->
+      <div class="cert-card" data-category="webdev"
+        data-title="Full-Stack Development 101"
+        data-issuer="Simplilearn"
+        data-year="2025"
+        data-category-label="Web Dev"
+        data-icon="bx bx-code-curly"
+        data-pdf="certificates/fullstack-development-101.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/fullstack-development-101.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-code-curly"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type webdev-tag">WEB DEV</div>
+          <h3>Full-Stack Development 101</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Simplilearn</p>
+          <span class="cert-card-year">2025</span>
+        </div>
+      </div>
+
+
+    <!-- CARD 8: Encoder-Decoder Architecture -->
+       <div class="cert-card" data-category="cybersecurity"
+        data-title="Encoder-Decoder-Architecture"
+        data-issuer="Simplilearn"
+        data-year="2025"
+        data-category-label="CyberSecurity"
+        data-icon="bx bx-code-curly"
+        data-pdf="certificates/encoder-decoder-architecture.pdf"
+        data-featured="true">
+        <div class="cert-card-thumb">
+         <img src="assets/certificates/encoder-decoder-architecture.png" alt="" onerror="this.remove()">
+         <div class="cert-icon-circle"><i class="bx bx-lock-alt"></i></div>
+         <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type cyber-tag">CYBERSECURITY</div>
+          <h3>Encoder-Decoder Architecture</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Simplilearn</p>
+          <span class="cert-card-year">2025</span>
+        </div>
+      </div>
+
+
+    <!-- CARD 9: HTML Essentials -->
+      <div class="cert-card" data-category="webdev"
+        data-title="HTML Essentials"
+        data-issuer="Cisco"
+        data-year="2026"
+        data-category-label="Web Dev"
+        data-icon="fab fa-html5"
+        data-pdf="certificates/html-essentials.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/html-essentials.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="fab fa-html5"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type webdev-tag">WEB DEV</div>
+          <h3>HTML Essentials</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Cisco</p>
+          <span class="cert-card-year">2026</span>
+        </div>
+      </div>
+
+
+    <!-- CARD 10: Python for Beginners -->
+      <div class="cert-card" data-category="ai"
+        data-title="Python for Beginners"
+        data-issuer="University of Moratuwa"
+        data-year="2026"
+        data-category-label="AI & ML"
+        data-icon="fab fa-python"
+        data-pdf="certificates/python-for-beginners.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/python-beginners.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="fab fa-python"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type ai-tag">AI & ML</div>
+          <h3>Python for Beginners</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> University of Moratuwa</p>
+          <span class="cert-card-year">2026</span>
+        </div>
+      </div>
+
+
+      <!-- CARD 11: Web Design for Beginners -->
+      <div class="cert-card" data-category="webdev"
+        data-title="Web Design for Beginners"
+        data-issuer="University of Moratuwa"
+        data-year="2026"
+        data-category-label="Web Dev"
+        data-icon="bx bx-palette"
+        data-pdf="certificates/web-design-beginners.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/web-design-beginners.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-palette"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type webdev-tag">WEB DEV</div>
+          <h3>Web Design for Beginners</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> University of Moratuwa</p>
+          <span class="cert-card-year">2026</span>
+        </div>
+      </div>
+
+
+    <!-- CARD 12: AI for Business Professionals -->
+      <div class="cert-card" data-category="ai"
+        data-title="AI for Business Professionals"
+        data-issuer="HP Foundation"
+        data-year="2026"
+        data-category-label="AI & ML"
+        data-icon="bx bx-brain"
+        data-pdf="certificates/ai-for-business-professionals.pdf"
+        data-transcript=""
+        data-featured="true">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/ai-for-business-professionals.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-brain"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type ai-tag">AI & ML</div>
+          <h3>AI for Business Professionals</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> HP Foundation</p>
+          <span class="cert-card-year">2026</span>
+        </div>
+      </div>
+
+
+ <!-- CARD 13: Java Programming for Beginners -->
+      <div class="cert-card" data-category="webdev"
+        data-title="Java Programming for Beginners"
+        data-issuer="Simplilearn"
+        data-year="2026"
+        data-category-label="Web Dev"
+        data-icon="bx bx-palette"
+        data-pdf="certificates/java-programming-beginners.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/java-programming-beginners.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-palette"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type webdev-tag">WEB DEV</div>
+          <h3>Java Programming for Beginners</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Simplilearn</p>
+          <span class="cert-card-year">2026</span>
+        </div>
+      </div>
+
+
+  <!-- CARD 14: Python Django 101 -->
+      <div class="cert-card" data-category="webdev"
+        data-title="Python Django 101"
+        data-issuer="Simplilearn"
+        data-year="2026"
+        data-category-label="Web Dev"
+        data-icon="fab fa-python"
+        data-pdf="certificates/python-django-101.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/python-django-101.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="fab fa-python"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type webdev-tag">WEB DEV</div>
+          <h3>Python Django 101</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Simplilearn</p>
+          <span class="cert-card-year">2026</span>
+        </div>
+      </div>
+
+
+  <!-- CARD 15: Cyber Security Awareness -->
+      <div class="cert-card" data-category="cybersecurity"
+        data-title="Introduction to Cybersecurity Awareness"
+        data-issuer="HP Foundation"
+        data-year="2026"
+        data-category-label="CyberSecurity"
+        data-icon="bx bx-shield"
+        data-pdf="certificates/intro to cs awareness.pdf"
+        data-featured="true">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/intro to cs awareness.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-shield"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type cyber-tag">CYBERSECURITY</div>
+          <h3>Introduction to Cybersecurity Awareness</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> HP Foundation</p>
+          <span class="cert-card-year">2026</span>
+        </div>
+      </div>
+
+
+
+  <!-- CARD 16: CSS HackerRank -->
+      <div class="cert-card" data-category="webdev"
+        data-title="CSS (Basic)"
+        data-issuer="HackerRank"
+        data-year="2026"
+        data-category-label="Web Dev"
+        data-icon="fab fa-css3-alt"
+        data-pdf="certificates/css (basic) hacker-rank.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/css (basic) hacker-rank.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="fab fa-css3-alt"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type webdev-tag">WEB DEV</div>
+          <h3>CSS (Basic)</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> HackerRank</p>
+          <span class="cert-card-year">2026</span>
+        </div>
     </div>
 
-    <!-- Filter Tabs -->
-    <div class="cert-filter">
-      <button class="cert-tab active" data-filter="all">All</button>
-      <button class="cert-tab" data-filter="cybersecurity">CyberSecurity</button>
-      <button class="cert-tab" data-filter="webdev">Web Dev</button>
-      <button class="cert-tab" data-filter="ai">AI & ML</button>
+
+  <!-- CARD 17: Advanced Software Engineering -->
+      <div class="cert-card" data-category="webdev"
+        data-title="Advanced Software Engineering Job Simulation"
+        data-issuer="Forage"
+        data-year="2026"
+        data-category-label="Web Dev"
+        data-icon="bx bx-code-alt"
+        data-pdf="certificates/advanced-software-engineering-job-simulation.pdf"
+        data-featured="">
+        <div class="cert-card-thumb">
+          <img src="assets/certificates/advanced-software-engineering-job-simulation.png" alt="" onerror="this.remove()">
+          <div class="cert-icon-circle"><i class="bx bx-code-alt"></i></div>
+          <div class="cert-card-overlay"><span><i class='bx bx-expand-alt'></i> View Details</span></div>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-card-type webdev-tag">WEB DEV</div>
+          <h3>Advanced Software Engineering Job Simulation</h3>
+          <p class="cert-card-issuer"><i class='bx bx-buildings'></i> Forage</p>
+          <span class="cert-card-year">2026</span>
+        </div>
     </div>
+      
 
-    <div class="certifications-grid">
+    </div><!-- /track -->
+  </div><!-- /outer -->
 
-      <!-- 1. Introduction to Cybersecurity — CyberSecurity -->
-      <div class="cert-card" data-category="cybersecurity">
-        <div class="cert-category-tag cyber">CyberSecurity</div>
-        <div class="cert-icon-wrap">
-          <i class='bx bx-lock-alt'></i>
-        </div>
-        <h3>Introduction to Cybersecurity</h3>
-        <h4>&nbsp;</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> Cisco</p>
-        <span class="cert-year">2023</span>
-        <a href="certificates/introduction-to-cybersecurity.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
+  <!-- Controls -->
+  <div class="cert-carousel-controls">
+    <button class="cert-carousel-btn" id="certPrev"><i class='bx bx-chevron-left'></i></button>
+    <div class="cert-carousel-dots" id="certDots"></div>
+    <button class="cert-carousel-btn" id="certNext"><i class='bx bx-chevron-right'></i></button>
+  </div>
+</section>
 
-      <!-- 2. Cyber Threat Management — CyberSecurity -->
-      <div class="cert-card" data-category="cybersecurity">
-        <div class="cert-category-tag cyber">CyberSecurity</div>
-        <div class="cert-icon-wrap">
-          <i class='bx bx-bug'></i>
-        </div>
-        <h3>Cyber Threat Management</h3>
-        <h4>&nbsp;</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> Cisco</p>
-        <span class="cert-year">2023</span>
-        <a href="certificates/cyber-threat-management.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
-
-      <!-- 3. CEH v11 — CyberSecurity ★ TOP -->
-      <div class="cert-card featured" data-category="cybersecurity">
-        <div class="cert-badge featured-badge">⭐ Top Cert</div>
-        <div class="cert-category-tag cyber">CyberSecurity</div>
-        <div class="cert-icon-wrap">
-          <i class='bx bx-shield-alt-2'></i>
-        </div>
-        <h3>Certified Ethical Hacker</h3>
-        <h4>CEH v11</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> MARS TECH International</p>
-        <span class="cert-year">2023</span>
-        <a href="certificates/ceh-v11.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
-
-      <!-- 4. AI and Robotics — AI & ML ★ TOP -->
-      <div class="cert-card featured" data-category="ai">
-        <div class="cert-badge featured-badge">⭐ Top Cert</div>
-        <div class="cert-category-tag ai">AI & ML</div>
-        <div class="cert-icon-wrap">
-          <i class='bx bx-chip'></i>
-        </div>
-        <h3>Artificial Intelligence and Robotics</h3>
-        <h4>&nbsp;</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> MARS TECH International</p>
-        <span class="cert-year">2024</span>
-        <a href="certificates/artificial-intelligence-and-robotics.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
-
-      <!-- 5. Full-Stack Development — Web Dev -->
-      <div class="cert-card" data-category="webdev">
-        <div class="cert-category-tag webdev">Web Dev</div>
-        <div class="cert-icon-wrap">
-          <i class='bx bx-code-curly'></i>
-        </div>
-        <h3>Full-Stack Development 101</h3>
-        <h4>&nbsp;</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> Simplilearn</p>
-        <span class="cert-year">2025</span>
-        <a href="certificates/full-stack-development-101.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
-
-      <!-- 6. HTML Essentials — Web Dev -->
-      <div class="cert-card" data-category="webdev">
-        <div class="cert-category-tag webdev">Web Dev</div>
-        <div class="cert-icon-wrap">
-          <i class='fab fa-html5'></i>
-        </div>
-        <h3>HTML Essentials</h3>
-        <h4>&nbsp;</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> Cisco</p>
-        <span class="cert-year">2026</span>
-        <a href="certificates/html-essentials.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
-
-      <!-- 7. Web Design for Beginners — Web Dev -->
-      <div class="cert-card" data-category="webdev">
-        <div class="cert-category-tag webdev">Web Dev</div>
-        <div class="cert-icon-wrap">
-          <i class='bx bx-palette'></i>
-        </div>
-        <h3>Web Design for Beginners</h3>
-        <h4>&nbsp;</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> University of Moratuwa</p>
-        <span class="cert-year">2026</span>
-        <a href="certificates/web-design-beginners.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
-
-      <!-- 8. Python for Beginners — AI & ML -->
-      <div class="cert-card" data-category="ai">
-        <div class="cert-category-tag ai">AI & ML</div>
-        <div class="cert-icon-wrap">
-          <i class='fab fa-python'></i>
-        </div>
-        <h3>Python for Beginners</h3>
-        <h4>&nbsp;</h4>
-        <p class="cert-issuer"><i class='bx bx-buildings'></i> University of Moratuwa</p>
-        <span class="cert-year">2026</span>
-        <a href="certificates/python-for-beginners.pdf" target="_blank" class="cert-btn">
-          <i class='bx bx-file'></i> View Certificate
-        </a>
-      </div>
-
+<!-- Certification Modal -->
+<div class="cert-modal-backdrop" id="certModal">
+  <div class="cert-modal">
+    <div class="cert-modal-icon-wrap" id="certModalIconWrap">
+      <i class="bx bx-shield cert-modal-big-icon" id="certModalIcon"></i>
     </div>
-  </section>
+    <button class="cert-modal-close" id="certModalClose"><i class='bx bx-x'></i></button>
+    <div class="cert-modal-body">
+      <div class="cert-modal-badge" id="certModalBadge"></div>
+      <h2 id="certModalTitle"></h2>
+      <p class="cert-modal-subtitle" id="certModalSubtitle"></p>
+      <div class="cert-modal-info">
+        <div class="cert-modal-info-row">
+          <i class='bx bx-buildings'></i>
+          <span id="certModalIssuer"></span>
+        </div>
+        <div class="cert-modal-info-row">
+          <i class='bx bx-calendar'></i>
+          <span id="certModalYear"></span>
+        </div>
+      </div>
+      <div class="cert-modal-actions" id="certModalActions"></div>
+    </div>
+  </div>
+</div>
 
   <!-- ───── PROJECTS ───── -->
   <section id="projects" class="projects">

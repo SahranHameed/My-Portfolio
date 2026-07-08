@@ -288,3 +288,177 @@ function openModal(card) {
   modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 })();
+
+
+(function () {
+
+  /* ── Certification Carousel ── */
+  var certTrack   = document.getElementById('certTrack');
+  var certDots    = document.getElementById('certDots');
+  var certProg    = document.getElementById('certProgressBar');
+  if (!certTrack) return;
+
+  var VISIBLE  = 4;
+  var AUTO_MS  = 5000;
+  var allCards = Array.from(certTrack.querySelectorAll('.cert-card'));
+  var visible  = allCards.slice(); /* currently shown cards */
+  var page     = 0;
+  var timer    = null;
+
+  /* Build dots based on visible cards */
+  function buildDots() {
+    var pages = Math.ceil(visible.length / VISIBLE);
+    certDots.innerHTML = '';
+    for (var i = 0; i < pages; i++) {
+      (function(idx) {
+        var b = document.createElement('button');
+        b.className = 'cert-dot' + (idx === 0 ? ' active' : '');
+        b.addEventListener('click', function() { goTo(idx); resetAuto(); });
+        certDots.appendChild(b);
+      })(i);
+    }
+  }
+
+  function updateDots() {
+    var pages = Math.ceil(visible.length / VISIBLE);
+    certDots.querySelectorAll('.cert-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === page);
+    });
+  }
+
+  function goTo(p) {
+    var pages = Math.ceil(visible.length / VISIBLE);
+    page = ((p % pages) + pages) % pages;
+    var outer    = certTrack.parentElement;
+    var totalGap = 20 * (VISIBLE - 1);
+    var cardW    = (outer.offsetWidth - totalGap) / VISIBLE;
+    var offset   = page * VISIBLE * (cardW + 20);
+    certTrack.style.transform = 'translateX(-' + offset + 'px)';
+    updateDots();
+    runProgress();
+  }
+
+  function runProgress() {
+    certProg.style.transition = 'none';
+    certProg.style.width = '0%';
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        certProg.style.transition = 'width ' + AUTO_MS + 'ms linear';
+        certProg.style.width = '100%';
+      });
+    });
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(function() {
+      var pages = Math.ceil(visible.length / VISIBLE);
+      goTo(page + 1);
+    }, AUTO_MS);
+  }
+
+  function resetAuto() { startAuto(); }
+
+  document.getElementById('certPrev').addEventListener('click', function() { goTo(page - 1); resetAuto(); });
+  document.getElementById('certNext').addEventListener('click', function() { goTo(page + 1); resetAuto(); });
+  window.addEventListener('resize', function() { goTo(page); });
+
+  /* ── Filter Tabs ── */
+  document.querySelectorAll('.cert-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      /* update active tab */
+      document.querySelectorAll('.cert-tab').forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+
+      var filter = tab.dataset.filter;
+      page = 0;
+      certTrack.style.transform = 'translateX(0)';
+
+      /* show/hide cards */
+      visible = [];
+      allCards.forEach(function(card) {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('cert-hidden');
+          visible.push(card);
+        } else {
+          card.classList.add('cert-hidden');
+        }
+      });
+
+      buildDots();
+      goTo(0);
+      resetAuto();
+    });
+  });
+
+  /* init */
+  buildDots();
+  goTo(0);
+  startAuto();
+
+  /* ── Certification Modal ── */
+  var certModal      = document.getElementById('certModal');
+  var certModalClose = document.getElementById('certModalClose');
+
+  function openCertModal(card) {
+    var d = card.dataset;
+
+    /* icon */
+    var iconEl = document.getElementById('certModalIcon');
+    iconEl.className = d.icon + ' cert-modal-big-icon';
+
+    /* badge color based on category */
+    var badge = document.getElementById('certModalBadge');
+    var badgeClass = d.category === 'cybersecurity' ? 'cyber-tag'
+                   : d.category === 'webdev'        ? 'webdev-tag'
+                   : 'ai-tag';
+    badge.className = 'cert-modal-badge ' + badgeClass;
+    badge.innerHTML = '<i class="bx bx-award"></i> ' + d.categoryLabel;
+
+    document.getElementById('certModalTitle').textContent   = d.title;
+    var sub = document.getElementById('certModalSubtitle');
+    sub.textContent = d.subtitle || '';
+    sub.style.display = d.subtitle ? '' : 'none';
+
+    document.getElementById('certModalIssuer').textContent = d.issuer;
+    document.getElementById('certModalYear').textContent   = d.year;
+
+    /* featured top badge in modal */
+    var existing = certModal.querySelector('.cert-modal-top-badge');
+    if (existing) existing.remove();
+    if (d.featured === 'true') {
+      var fb = document.createElement('div');
+      fb.className = 'cert-top-badge cert-modal-top-badge';
+      fb.style.cssText = 'position:absolute;top:14px;left:14px;';
+      fb.textContent = '⭐ Top Cert';
+      certModal.querySelector('.cert-modal').appendChild(fb);
+    }
+
+    /* action button */
+    var actions = '<a href="' + d.pdf + '" target="_blank" class="btn-primary">'
+            + '<i class="bx bx-file"></i> View Certificate</a>';
+
+if (d.transcript && d.transcript.trim() !== '') {
+  actions += '<a href="' + d.transcript + '" target="_blank" class="btn-ghost">'
+           + '<i class="bx bx-notepad"></i> View Transcript</a>';
+}
+
+document.getElementById('certModalActions').innerHTML = actions;
+
+    certModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCertModal() {
+    certModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  allCards.forEach(function(c) {
+    c.addEventListener('click', function() { openCertModal(c); });
+  });
+  certModalClose.addEventListener('click', closeCertModal);
+  certModal.addEventListener('click', function(e) { if (e.target === certModal) closeCertModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCertModal(); });
+
+})();
